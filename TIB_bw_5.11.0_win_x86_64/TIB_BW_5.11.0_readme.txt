@@ -1,0 +1,147 @@
+======================================================================
+Product Name   : TIBCO ActiveMatrix BusinessWorks(TM)
+Release Version: 5.11.0
+Release Date   : November 2012
+
+======================================================================
+Introduction
+
+  The TIBCO ActiveMatrix BusinessWorks integration platform enables 
+  companies to rapidly integrate systems and automate business 
+  processes. TIBCO ActiveMatrix BusinessWorks supports your 
+  integration project throughout the project lifecycle. It includes a
+  common graphical user interface for adapter configuration, process
+  design, and deployment. User administration, component management,
+  and process monitoring are available via a web browser based GUI.
+
+======================================================================
+Supported Platforms
+
+  TIBCO BusinessWorks depends on the platform support provided by your
+  installed TIBCO Runtime Agent version. The installation package
+  allows you to install one or more components of the software on
+  different machines in a TIBCO Administration Domain. 
+
+  All components can be installed on the following platforms:
+ 
+  IBM (POWER)
+   AIX 6.1
+   AIX 7
+   AIX 7.1 
+
+  HP-UX (IA-64/Itanium)
+   HP-UX 11i v2
+   HP-UX 11i v3
+
+  Red Hat (x86 & x86-64) 
+   Red Hat Enterprise Linux 5.5+
+   Red Hat Enterprise Linux 6.x
+
+  SUSE (x86 & x86-64)
+   SUSE Linux Enterprise 10.x
+   SUSE Linux Enterprise 11
+
+  Solaris (SPARC) 
+   Solaris 10
+   Solaris 11
+
+  Solaris (x86 & x86-64)
+   Solaris 10
+   Solaris 11
+
+  Microsoft Windows (x86 & x86-64)
+   Windows Server 2003 SP1
+   Windows Server 2003 R2 and 2008 R2
+   Windows Server 2008
+   Windows XP
+   Windows 2008 SP1 and SP2
+   Windows Vista Business Edition with latest patches
+   Windows 7
+ 
+======================================================================
+Minimum Disk Space and Memory Requirements
+
+  Free disk space: 125MB
+
+  Memory: 512MB RAM
+
+======================================================================
+Software Requirements
+
+  TIBCO Software:
+
+    TIBCO Runtime Agent 5.8.0 or above (must be installed before 
+    TIBCO ActiveMatrix BusinessWorks is installed.)
+    TIBCO Rendezvous 8.4.0 hotfix02 (Contact Support 
+    for assistance, if needed.)        
+
+  Third-party Software:
+  
+  Databases    
+    Oracle 11g
+    Oracle 11g with RAC
+    Oracle 11gR2
+    Oracle 11gR2 with RAC    
+    Oracle 10g with RAC
+    Oracle 10g
+    Oracle 9i with RAC
+    Oracle 9.x
+    Oracle 8.1.x
+    Microsoft SQL Server 2000
+    Microsoft SQL Server 2005
+    Microsoft SQL Server 2008
+    MySQL 5.0
+    Sybase 12.x and 15
+    DB2 8.2
+    DB2 9.0
+    DB2 9.5
+    DB2 9.7
+    DB2 10.1
+    TimesTen 5.0.x
+    
+  JMS Servers
+    Oracle WebLogic Server Version 7.0 Service Pack 2, 
+    Version 8.1 Service Pack 1, Version 9.2, and Version 10.3
+    IBM WebSphere 5.0.2, 6.0, and 7.0
+    JBoss 3.2.1, 4.0.2, 5.0
+    Sun JMS Server 3.6
+
+  Application Servers
+    Oracle WebLogic Server Version 7.0 Service Pack 2, 
+    Version 8.1 Service Pack 1, Version 9.2, and Version 10.3
+    IBM WebSphere 5.0.2,6.0 and 7.0
+    JBoss 3.2.1, 4.0.2, 5.0
+
+
+======================================================================
+TIBCO Product Support
+  
+  Check the TIBCO Product Support web site at 
+  https://support.tibco.com for product information that was not 
+  available at release time. Entry to this site requires a username 
+  and password. If you do not have one, you can request one. You must 
+  have a valid maintenance or support contract to use this site.
+
+======================================================================
+Documentation 
+  
+Product Manuals
+
+  • Before installation, access product documentation from the download 
+    site or in the doc folder at the root level on the product DVD.
+  • After installation, if documentation has been installed with the 
+    product access product documentation in the folder 
+    TIBCO_HOME/bw/5.11/doc.
+
+Release Notes and Installation Guide
+
+  • For new features, closed issues, and known issues, see the
+    TIBCO Product Name Release Notes. Release notes are installed in 
+    TIBCO_HOME\release_notes.
+  • For installation instructions, see TIBCO Product Name Installation.
+
+======================================================================
+Copyright
+
+Copyright (C) 2001-2012 TIBCO Software Inc. ALL RIGHTS RESERVED.
+TIBCO Software Inc. Confidential Information
