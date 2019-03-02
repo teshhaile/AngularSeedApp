@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TIBCOInstallerFeatures>
+	<productDef buildNumber="V16.9" buildType="release" compatDisplayName="TIBCO Hawk" compatType="hawk" id="hawk" installDir="hawk/4.9" name="TIBCO Hawk 4.9.0" productMMName="shared" productMMVersion="1.0.0" productMachineModel="true" targetPlatform="win/x86_64" universalinstallerversion="V3" version="4.9.0"/>
+
+	<installerFeatureNode name="TIBCO Hawk 4.9.0" nodeID="hawk-node" parentNode="root"/>
+
+	<!-- Setting customVariables daemons64bitOnly for unix 64bit packages only. If variable set, copies 64 binaries to rvd. -->
+	<customVariables>
+        <variable name="hawk.product.feature.traonly" value="installed"/>	
+		
+		<variable name="64bitpackage" plat="win_x86_64,aix_power_64,hpux_hppa_64,hpux_ia64,linux_x86_64,sol_x86_64,sol_sparc_64" value="true"/>
+		<variable name="hawk.home" value="${tibco.home}${fsp}hawk${fsp}4.9"/>
+        <variable name="hawk.short.version" value="4.9"/>
+        <variable name="hawk.major.version" value="4"/>
+        <variable name="hawk.minor.version" value="9"/>
+        <variable name="hawk.maint.version" value="0"/>
+	</customVariables>
+
+	<installerFeature name="Required" parentID="hawk" parentProduct="TIBCO Hawk 4.9" version="4.9.0" visible="false">
+		<assemblyList>
+			<assembly overrideTargetDirectory="${hawk.home}" uid="product_tibco_hawk_required_common" version="4.9.0.034"/>
+		</assemblyList>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="updateSetup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.sdk=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-sdk-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="SDK_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.agent=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-agent-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="Agent_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.display=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-display-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="Display_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.event=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-event-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="Event Service_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.plugin.adapters=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-plugin-adapters-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="Adapters and Plug-ins_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.samples=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-samples-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="Samples_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.plugin.docs=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-docs-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="TIBCO Hawk Documentation_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction active="true" description="Hawk Post Installation - Update - Update install.properties - hawk.product.feature.plugin.docs=installed" failOnError="true" logLevel="debug" sequence="post-assembly-ref" target="update-shared-setup" taskFile="${hawk.home}/setup/updateInstallProps.xml">
+			<condition class="com.tibco.installer.wizard.condition.TIBCOFeatureSelectedWizardCondition">
+				<property mustBeMet="true"/>
+				<property featureID="Shared_hawk"/>
+			</condition>
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${hawk.home}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="hawk.short.version" value="${hawk.short.version}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.domain" value="${hawk.home}/domain"/>
+		</postInstallAction>
+		<postInstallAction description="Hawk Post Installation - Update install.properties" logLevel="debug" sequence="post-assembly-ref" target="updateSetup" taskFile="${tibco.home}/hawk/4.9/setup/post-install.xml">
+		</postInstallAction>          
+		<postInstallAction description="Hawk Post Installation - Setting up Hawk Home" logLevel="debug" sequence="post-assembly-ref" target="postInstall" taskFile="${tibco.home}/hawk/4.9/setup/post-install.xml">
+		</postInstallAction>     
+		<postInstallAction description="Hawk Post Uninstallation - Clean up Hawk Home" logLevel="debug" sequence="pre-uninstall-ref" target="preUninstall" taskFile="${tibco.home}/hawk/4.9/setup/post-install.xml">
+		</postInstallAction>
+        <postInstallAction description="Hawk Post Installation - Update Hawk HMA Windows Agent" logLevel="debug" sequence="post-assembly-ref" target="updateWindowsAgent" taskFile="${tibco.home}/hawk/4.9/setup/post-install.xml">
+        </postInstallAction>        
+        <postInstallAction description="Hawk Post Installation - Update Hawk HMA Windows Agent" logLevel="debug" sequence="post-assembly-ref" target="updateHotfixLib" taskFile="${tibco.home}/hawk/4.9/setup/post-install.xml">
+        </postInstallAction>        
+		<dependency description="TIBCO Rendezvous" mustBeInstalled="false" parentID="rv" type="feature" uid="Runtime_rv" version="8.4.0"/> 
+	 	<vpdentry compid="hawk" createuninstdir="true" description="TIBCO Hawk" displayName="hawk" installLocation="${tibco.home}/hawk/4.9" name="hawk" parentidkey="hawk" version="4.9.0.1"/>
+		<vpdentry compid="hawk_tibcoinventory" description="TIBCO Hawk" displayName="hawk" installLocation="${tibco.home}/hawk/4.9" name="tibcoinventory" parentidkey="hawk" version="4.9.0.1"/>
+	</installerFeature>
+
+	<installerFeature name="Shared" parentID="hawk" parentProduct="TIBCO Hawk 4.9" version="4.9.0" visible="false">
+		<assemblyList>
+			<!-- RU for agent -->
+            <assembly uid="assembly_tibco_com_tibco_jms_jmsclient_feature" version="5.1.0.001"/>
+            <assembly uid="assembly_tibco_com_tibco_commonlogging_logclient_feature" version="2.1.0.026"/>
+            <assembly uid="assembly_tibco_com_tibco_commonlogging_payload_feature" version="1.0.0.008"/>
+            <assembly uid="assembly_tibco_com_tibco_security_tibcrypt_feature" version="2.16.0.005"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_com_sun_jmx_remote_optional_feature" version="1.0.200.005"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_jms_feature" version="1.1.100.003"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_mail_feature" version="1.4.100.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_activation_feature" version="1.1.100.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_resource_feature" version="1.5.100.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_springframework_context_feature" version="2.5.6.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_springframework_minimum_feature" version="2.5.6.002"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_springframework_orm_feature" version="2.5.6.003"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_log4j_feature" version="1.2.200.003"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_commons_pool_feature" version="1.3.100.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_xmlbeans_feature" version="2.4.100.007"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_hsqldb_feature" version="1.8.200.003"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_dom4j_feature" version="1.6.200.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_slf4j_log4j12_feature" version="1.5.100.005"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_commons_logging_over_slf4j_feature" version="1.5.2.007"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_regexp_feature" version="1.4.100.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_commons_httpclient_feature" version="3.1.100.004"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_mortbay_jetty_feature" version="6.1.20.002"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_servlet_feature" version="2.5.100.002"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_servlet_jsp_feature" version="2.1.100.003"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_org_apache_tools_ant_feature" version="1.7.100.001"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_javax_system_exports_feature" version="5.0.100.007"/>
+            <assembly uid="assembly_tibco_com_tibco_tpcl_emf" version="2.4.2.006"/>
+	        <assembly uid="assembly_tibco_com_tibco_tpcl_org_eclipse_equinox_feature" version="3.5.1.001"/>
+  	        
+  	        <assembly uid="assembly_tibco_com_tibco_hawk_tpcl_feature" version="4.9.0.001"/>
+			<assembly uid="assembly_tibco_com_tibco_hawk_core_feature" version="4.9.0.023"/>
+  	        <assembly uid="assembly_tibco_com_tibco_hawk_security_feature" version="4.9.0.010"/>
+			<assembly uid="assembly_tibco_com_tibco_hawk_ami_feature" version="4.9.0.010"/>
+  	        <assembly uid="assembly_tibco_com_tibco_hawk_microagent_feature" version="4.9.0.015"/>
+  	        <assembly uid="assembly_tibco_com_tibco_hawk_agent_feature" version="4.9.0.016"/>
+	            
+            <!-- BOM file -->
+            <assembly overrideTargetDirectory="${hawk.home}" uid="product_tibco_hawk_shared_common" version="4.9.0.028"/>
+            <assembly overrideTargetDirectory="${hawk.home}" targetPlatform="win/x86_64/vc8" uid="product_tibco_hawk_shared_native" version="4.9.0.028"/>
+            
+            <assembly overrideTargetDirectory="${hawk.home}" plat="win_x86_64,win_x86_64_vc8,aix61_power_64,hpux111_hppa_64,hpux112_ia64,linux24gl23_x86_64,linux26gl24_x86_64,linux26gl23_x86_64,sol10_x86_64,sol10_sparc_64" targetPlatform="win/x86_64/vc8" uid="product_tibco_hawk_ami_64bit" version="4.9.0.028"/>
+
+
+            
+            <assembly plat="win_x86_64,win_x86_64_vc8" uid="product_tibco_a_vcredistx64" version="2.1.0.001"/>        
+                
+		</assemblyList>
+        <dependency description="TIBCO Wrapper Executable" plat="aix61_power,aix61_power_64,hpux111_hppa,hpux111_hppa_64,hpux112_ia64_32,hpux112_ia64,linux26gl24_s390x,linux26gl23_x86,linux26gl23_x86_64,macosx/x86_64,sol10_x86,sol10_x86_64,sol10_sparc,sol10_sparc_64,win_x86,win_x86_64" type="feature" uid="main_wrapper" version="2.3.0"/>
+        <dependency description="TIBCO PWrapper Executable" plat="win_x86,win_x86_64" type="feature" uid="main_pwrapper" version="2.3.0"/>
+	</installerFeature>
+	<installerFeature name="TRA" parentID="hawk" parentProduct="TIBCO Hawk 4.9" version="4.9.0" visible="false">
+		<assemblyList>
+			<assembly overrideTargetDirectory="${hawk.home}" targetPlatform="win/x86_64/vc8" uid="product_tibco_hawk_rulebase" version="4.9.0.028"/>
+			<assembly overrideTargetDirectory="${hawk.home}" uid="product_tibco_hawk_admin_plugins_common" version="4.9.0.028"/>
+		</assemblyList>
+		<dependency description="TIBCO Hawk Required Feature" mustBeInstalled="false" parentID="hawk" type="feature" uid="Required_hawk" version="4.9.0"/> 
+		<dependency description="TIBCO Hawk Shared Feature" mustBeInstalled="false" parentID="hawk" type="feature" uid="Shared_hawk" version="4.9.0"/> 
+		
+		
+        
+	    
+	    
+	    <dependency description="64bit Oracle JRE" plat="win_x86_64,linux_x86_64,sol_sparc_64,sol_x86_64" type="feature" uid="main_tibcojava64-oracle" version="1.7.0"/>
+	</installerFeature>
+	<installerFeature defaultSelected="true" name="Agent" parentID="hawk" parentNode="hawk-node" parentProduct="TIBCO Hawk 4.9" version="4.9.0" visible="true">
+		<assemblyList>
+			<assembly overrideTargetDirectory="${hawk.home}" uid="product_tibco_hawk_agent_common" version="4.9.0.028"/>
+			<assembly overrideTargetDirectory="${hawk.home}" targetPlatform="win/x86_64/vc8" uid="product_tibco_hawk_agent_native" version="4.9.0.028"/>
+		</assemblyList>
+		<dependency description="TIBCO Hawk TRA Feature" mustBeInstalled="false" parentID="hawk" type="feature" uid="TRA_hawk" version="4.9.0"/> 
+		<dependency description="TIBCO Hawk Agent Hotfix 3" mustBeInstalled="false" parentID="hawk" type="feature" uid="Agent Hotfix 3_hawk" version="4.9.0"/> 
+		<vpdentry compid="hawk_agent" description="Agent" displayName="agent" installLocation="${tibco.home}/hawk/4.9" name="agent" parentidkey="hawk" version="4.9.0.1"/>
+	</installerFeature>
+    <installerFeature name="Agent Hotfix 3" version="4.9.0" visible="false">
+        <assemblyList>
+            <assembly overrideTargetDirectory="${hawk.home}" plat="win_x86,win_x86_64" targetPlatform="win/x86_64/vc8" uid="product_tibco_hawk_agent_native" version="4.9.0.032"/>
+            
+            
+        </assemblyList>
+    </installerFeature>
+	<customSettings enableTibcoHomeConfigDirectory="true" machineModel="false" multipleEnvironmentSupport="true"/>
+
+</TIBCOInstallerFeatures>

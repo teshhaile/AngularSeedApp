@@ -1,0 +1,66 @@
+================================================================================
+Product Name:    TIBCO Designer(TM)
+Release Version: 5.8.0
+Release Date:    November 2012
+================================================================================
+Introduction
+
+  TIBCO Designer is a unified graphical user interface that is used by different 
+  products in the TIBCO ActiveEnterprise(TM) product family.
+
+================================================================================
+Supported Platforms
+
+  TIBCO Designer is part of the TIBCO Runtime Agent(TM) installation. 
+  See the TIBCO Runtime Agent TIB_tra_5.8.0_readme.txt for a list of supported 
+  platforms.
+
+================================================================================
+Supported Revision Control Systems
+
+  Microsoft Visual SourceSafe (MVSS):
+    Visual SourceSafe Version 6.0d (Build 9848)
+
+  Perforce:
+    Client Version: 2005.1 82634 (Jul 18 2005)
+    Server Version: 2004.2 75008 (Jan 27 2005) 
+
+  Rational ClearCase:
+    Version: 7.1.1
+
+  Serena ChangeMan Version Manager (PVCS)
+    Version: 8.1.1 (Build 900)
+
+  Concurrent Versions System (CVS)
+    Concurrent Versions System (CVSNT) 2.5.01 (Travis) Build 1976 
+    (client/server) 
+
+================================================================================
+TIBCO Product Support
+  
+  Check the TIBCO Product Support web site at https://support.tibco.com for 
+  product information that was not available at release time. Entry to this site
+  requires a username and password. If you do not have one, you can request one.
+  You must have a valid maintenance or support contract to use this site.
+
+================================================================================
+Documentation
+
+Product Manuals
+    * Before installation, access product documentation from the download site 
+      or in the doc folder at the root level on the product media.
+    * After installation, if documentation has been installed with the product, 
+      access product documentation in the folder 
+      TIBCO_HOME\designer\5.8\doc.
+ 
+Installation Guide and Release Notes
+    * For installation instructions, see the Installation Guide that is extracted
+      from the software package archive into the temporary directory.
+    * For new features, closed issues, and known issues, see the product Release 
+      Notes in TIBCO_HOME\release_notes.
+
+================================================================================
+Copyright
+
+Copyright (C) 1999-2012 TIBCO Software Inc. ALL RIGHTS RESERVED.
+TIBCO Software Inc. Confidential Information 

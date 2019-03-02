@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TIBCOInstallerFeatures>
+
+	<!-- main definition for the product.  Use 4 digit version -->
+	<productDef buildNumber="V16.9" buildType="release" compatDisplayName="TIBCO Designer" compatType="Designer" id="Designer" installDir="designer/5.8" name="TIBCO Designer 5.8.0" targetPlatform="win/x86_64" universalinstallerrelease="3.1.0" universalinstallerversion="V3" version="5.8.0"/>
+
+	<customVariables>
+		<variable name="designer.home" value="${tibco.home}${fsp}designer${fsp}5.8"/>
+		<variable name="designer.home.esc" value="${tibco.home.esc}/designer/5.8"/>
+		<variable name="designer.short.version" value="5.8"/>
+		<variable name="designer.version" value="5.8.0"/>
+
+		<variable name="minimum.rv.version" value="8.4.0"/>
+		<variable name="minimum.hawk.version" value="4.9.0"/>
+		<variable name="minimum.tpcl.version" value="5.8.0"/>
+		<variable name="minimum.tra.version" value="5.8.0"/>
+	</customVariables>
+
+	<installerFeature installLocation="${designer.home.esc}" name="Runtime" version="5.8.0" visible="true">
+    	<assemblyList>
+			<assembly targetPlatform="win/x86_64" uid="product_tibco_designer_runtime" version="5.8.0.010"/>
+			<assembly uid="product_tibco_designer_common" version="5.8.0.010"/>
+		</assemblyList>
+
+		<dependency description="TIBCO Rendezvous" mustBeInstalled="false" parentID="rv" type="feature" uid="Runtime_rv" version="${minimum.rv.version}"/>
+		<dependency description="Third Party Core Libraries" mustBeInstalled="false" parentID="tpcl" type="feature" uid="Runtime_tpcl" version="${minimum.tpcl.version}"/>
+		<dependency description="TIBCO Runtime Agent" mustBeInstalled="false" parentID="TRA" type="feature" uid="Runtime_TRA" version="${minimum.tra.version}"/>
+
+		<wizardAction class="com.tibco.installer.wizard.action.TIBCODoStuffWithFilesWizardAction" sequence="install">
+    		<property sourceFile="${designer.home.esc}/bin/designer.tra_template"/>
+    		<property targetFile="${designer.home.esc}/bin/designer.tra"/>
+    		<property fileAction="copy"/>
+    		<property overwriteExistingFile="true"/>
+		</wizardAction>
+
+		<wizardAction class="com.tibco.installer.wizard.action.TIBCODoStuffWithFilesWizardAction" sequence="install">
+    		<property sourceFile="${designer.home.esc}/bin/buildlibrary.tra_template"/>
+    		<property targetFile="${designer.home.esc}/bin/buildlibrary.tra"/>
+    		<property fileAction="copy"/>
+    		<property overwriteExistingFile="true"/>
+		</wizardAction>
+
+		<wizardAction class="com.tibco.installer.wizard.action.TIBCODoStuffWithFilesWizardAction" sequence="install">
+    		<property sourceFile="${designer.home.esc}/bin/validateproject.tra_template"/>
+    		<property targetFile="${designer.home.esc}/bin/validateproject.tra"/>
+    		<property fileAction="copy"/>
+    		<property overwriteExistingFile="true"/>
+		</wizardAction>
+
+		<postInstallAction description="TIBCO Designer Post Installation - Update *.tra files" logLevel="debug" sequence="post-assembly-ref" target="post-install" taskFile="${designer.home.esc}/setup/post-install.xml">
+			<postInstallActionProperty name="tibco.rv.home" value="${TIBCO_RV_HOME}"/>
+			<postInstallActionProperty name="tibco.rv.home.esc" value="${TIBCO_RV_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tpcl.home" value="${TIBCO_TPCL_HOME}"/>
+			<postInstallActionProperty name="tibco.tpcl.home.esc" value="${TIBCO_TPCL_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.hawk.home" value="${TIBCO_HAWK_HOME}"/>
+			<postInstallActionProperty name="tibco.hawk.home.esc" value="${TIBCO_HAWK_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.home" value="${TIBCO_TRA_HOME}"/>
+			<postInstallActionProperty name="tibco.tra.home.esc" value="${TIBCO_TRA_HOME_ESC}"/>
+			<postInstallActionProperty name="tibco.tra.append.version" value="${TIBCO_TRA_APPEND_VERSION}"/>
+			<postInstallActionProperty name="tibco.designer.home" value="${designer.home}"/>
+			<postInstallActionProperty name="tibco.designer.home.esc" value="${designer.home.esc}"/>
+    	</postInstallAction>     
+
+		<postInstallAction description="TIBCO Designer Pre-Uninstallation - Delete *.tra and wrapper files" logLevel="debug" sequence="pre-uninstall-ref" target="pre-uninstall" taskFile="${designer.home.esc}/setup/post-install.xml">
+			<postInstallActionProperty name="tibco.designer.home" value="${designer.home}"/>
+			<postInstallActionProperty name="tibco.designer.home.esc" value="${designer.home.esc}"/>
+    	</postInstallAction>     
+
+		<vpdentry compid="Designer" description="TIBCO Designer" displayName="Designer" installLocation="${designer.home.esc}" name="Designer" parentidkey="Designer" version="5.8.0.1"/>
+		<vpdentry compid="Designer_tibcoinventory" description="TIBCO Designer" displayName="tibcoinventory" installLocation="${designer.home.esc}" name="tibcoinventory" parentidkey="Designer" version="5.8.0.1"/>
+		<vpdentry compid="Designer_runtime" dependency="jre,1.7.0.1;tpcl,5.8.0.1;TRA_runtime,5.8.0.1" description="Runtime" displayName="runtime" installLocation="${designer.home.esc}" name="runtime" parentidkey="Designer" version="5.8.0.1"/>
+	</installerFeature>
+
+	<installerFeature installLocation="${designer.home.esc}" name="Documentation" version="5.8.0" visible="true">
+    	<assemblyList>
+			<assembly uid="product_tibco_designer_docs" version="5.8.0.010"/>
+		</assemblyList>
+		<vpdentry compid="Designer_documentation" description="Documentation" displayName="documentation" installLocation="${designer.home.esc}" name="documentation" parentidkey="Designer" version="5.8.0.1"/>
+	</installerFeature>
+
+	<!-- custom universal installer settings for this product -->
+
+	<customSettings machineModel="false" multipleEnvironmentSupport="true">
+	</customSettings>
+
+</TIBCOInstallerFeatures>

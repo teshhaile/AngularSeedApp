@@ -1,0 +1,151 @@
+================================================================================
+Product Name: TIBCO Runtime Agent(TM)
+Release Version:  5.8.0
+Release Date: November 2012
+
+================================================================================
+Introduction
+
+TIBCO Runtime Agent is a bundle of TIBCO software and third-party software 
+that is needed to run many TIBCO applications such as TIBCO ActiveMatrix
+BusinessWorks(TM) and TIBCO(R) Adapters. 
+
+This release, TIBCO Runtime Agent 5.8.0, provides a full product installation. 
+
+================================================================================
+Supported Platforms
+
+IBM (POWER)
+AIX 6.1
+AIX 7
+AIX 7.1
+ 
+HP-UX (IA-64/Itanium)
+HP-UX 11i v2
+HP-UX 11i v3
+
+Red Hat (x86 and x86-64)  
+Red Hat Enterprise Linux 5.5+ 
+Red Hat Enterprise Linux 6.x 
+
+Oracle Enterprise Linux (x86 and x86-64)
+Oracle Enterprise Linux Server 5.1
+
+SUSE (x86 and x86-64)
+SUSE Linux Enterprise 10.x
+SUSE Linux Enterprise 11
+
+Solaris (SPARC) 
+Solaris 10 
+Solaris 11 
+
+Solaris (x86 and x86-64)
+Solaris 10
+Solaris 11
+
+Microsoft Windows
+Windows Server 2003 SP1 (x86, x86-64)
+Windows Server 2003 R2 (x86, x86-64) 
+Windows Server 2008 (x86, x86-64)
+Windows Server 2008 R2 (x86-64)
+Windows XP (x86, x86-64)
+Windows 2008 SP1 SP2 (x86, x86-64)
+Windows Vista Business Edition (x86, x86-64) with latest patches
+Windows 7 (x86, x86-64)
+ 
+* A 64-bit installer is available for each platform.
+* All 32-bit installers are supported on 64-bit platforms as 32-bit software, 
+unless otherwise noted. Please check the documentation for your specific TIBCO 
+product(s).
+In order to use TIBCO products (such as TIBCO ActiveMatrix BusinessWorks) 
+with TIBCO Runtime Agent in a 64-bit configuration, manual configuration 
+steps may be required as a post-installation activity. Please consult your 
+TIBCO product documentation for further details.
+
+================================================================================
+Minimum Disk Space and Memory Requirements
+
+Free disk space: 500 MB in TIBCO_HOME and 200 MB in the temp directory.
+
+Memory: Varies by platform. See the TIBCO Runtime Agent Installation Guide
+for details.
+================================================================================
+Software Requirements
+
+TIBCO Software:
+ Required Software
+ - TIBCO Rendezvous 8.4.0 or above (must be installed before 
+ TIBCO Runtime Agent is installed.)
+
+ Compatible Software
+ Refer to TIBCO Runtime Agent Upgrading to Release 5.8 for 
+ software compatibility.
+================================================================================
+Supported Databases and Drivers
+
+Oracle 10g R1 (10.1.x.x), 10g R1 (10.1.x.x) RAC
+Oracle 10g R2 (10.2.x.x), 10g R2 (10.2.x.x) RAC
+Oracle 11g R1 (11.1.x.x), 11g R1 (11.1.x.x) RAC
+Oracle 11g R2 (11.2.x.x), 11g R2 (11.1.x.x) RAC
+Driver name and version for Oracle: 
+Oracle Thin-driver
+Oracle Thick-driver
+
+Microsoft SQL Server 2005
+Microsoft SQL Server 2008
+Microsoft SQL Server 2008 R2
+Driver names and version for SQL Server: 
+Microsoft JDBC 2.0 and 3.0 driver
+ 
+IBM DB2 Universal Database 9.x
+  Driver name and version for DB2:
+  com.ibm.db2.jcc.DB2Driver 2.6
+IBM DB2 9.7 HA
+
+================================================================================
+Supported LDAP Servers
+
+Sun ONE Directory Server 5.1 with Service Pack 2
+Sun ONE Directory Server 5.2
+Microsoft Active Directory 2003
+Microsoft Active Directory 2008 
+Microsoft Active Directory 2008 R2
+Microsoft Active Directory Lightweight Directory Service (LDS) 2003
+Microsoft Active Directory Lightweight Directory Service (LDS) 2008
+Microsoft Active Directory Lightweight Directory Service (LDS) 2008 R2
+Novell eDirectory 8.6.2
+Novell eDirectory 8.7.3
+Novell eDirectory 8.8.2
+Novell eDirectory 8.8.4
+CA Directory Server r8.1
+OpenLDAP 2.3
+
+================================================================================
+TIBCO Product Support
+
+Check the TIBCO Product Support web site at https://support.tibco.com for
+product information that was not available at release time. Entry to this site
+requires a username and password. If you do not have one, you can request one.
+You must have a valid maintenance or support contract to use this site.
+
+================================================================================
+Documentation
+
+Product Manuals
+* Before installation, access product documentation from the download site 
+or in the doc folder at the root level on the product media.
+* After installation, if documentation has been installed with the product, 
+access product documentation in the folder 
+TIBCO_HOME\tra\5.8\doc.
+ 
+Installation Guide and Release Notes
+* For installation instructions, see the Installation Guide that is extracted
+from the software package archive into the temporary directory.
+* For new features, closed issues, and known issues, see the product Release 
+Notes in TIBCO_HOME\release_notes.
+
+================================================================================
+Copyright
+
+Copyright(C) 1997-2012 TIBCO Software Inc. ALL RIGHTS RESERVED.
+TIBCO Software Inc. Confidential Information 

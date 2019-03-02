@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TIBCOInstallerFeatures>
+    <productDef buildNumber="V16.9" buildType="release" id="tibcojava64-oracle" name="64bit JRE Oracle" productType="contributor" targetPlatform="win/x86_64" universalinstallerrelease="3.1.0" universalinstallerversion="V3" version="1.7.0.009"/>
+    
+    <installerFeature name="main" version="1.7.0.009" visible="false">
+        <assemblyList>
+            <assembly plat="win_x86_64,linux_x86_64,sol_sparc_64,sol_x86_64,macos_x86_64" targetPlatform="win/x86_64" uid="product_tibco_tibcojava64" version="1.7.0.009"/>
+        </assemblyList>
+   </installerFeature>
+
+    
+</TIBCOInstallerFeatures>

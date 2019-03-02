@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TIBCOInstallerFeatures>
+    <productDef buildNumber="V16.9" buildType="release" id="pwrapper" name="TIBCO PWrapper" productType="contributor" targetPlatform="win/x86_64" universalinstallerrelease="3.1.0" universalinstallerversion="V3" version="2.3.0.007"/>
+    <installerFeature name="main" version="2.3.0.007" visible="false">
+        <assemblyList>
+            <assembly plat="win_x86,win_x86_64" targetPlatform="win/x86_64/vc8" uid="product_tibco_pwrapper" version="2.3.0.007"/>
+        </assemblyList>
+   </installerFeature>
+</TIBCOInstallerFeatures>
